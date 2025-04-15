@@ -1,0 +1,29 @@
+[project]
+name = "{{ cookiecutter.project_slug }}"
+version = "{{ cookiecutter.version }}"
+description = "{{ cookiecutter.project_short_description }}"
+readme = "README.md"
+requires-python = ">={{ cookiecutter.python_version }}"
+dependencies = [
+{%- if cookiecutter.command_line_interface.lower() == "click" %}
+  "click",
+{%- endif %}
+]
+
+[dependency-groups]
+dev = [
+    "black",
+    "flake8",
+    "isort",
+    "pre-commit",
+    "pyright",
+    "pytest",
+{%- if cookiecutter.use_asyncio.lower() == "y" %}
+    "pytest-asyncio",
+{%- endif %}
+    "pytest-cov",
+]
+{%- if cookiecutter.use_asyncio.lower() == "y" %}
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "session"
+{%- endif %}
