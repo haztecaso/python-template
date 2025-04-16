@@ -9,6 +9,12 @@ dependencies = [
   "click",
 {%- endif %}
 ]
+{%- if cookiecutter.command_line_interface.lower() in ["click", "typer"] %}
+
+[project.scripts]
+{{ cookiecutter.project_slug }}= "{{cookiecutter.project_slug}}.__main__:main"
+{%- endif %}
+]
 
 [dependency-groups]
 dev = [
@@ -24,6 +30,7 @@ dev = [
     "pytest-cov",
 ]
 {%- if cookiecutter.use_asyncio.lower() == "y" %}
+
 [tool.pytest.ini_options]
 asyncio_default_fixture_loop_scope = "session"
 {%- endif %}
