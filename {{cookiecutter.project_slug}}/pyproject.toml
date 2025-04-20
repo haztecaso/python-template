@@ -11,6 +11,10 @@ dependencies = [
 ]
 {%- if cookiecutter.command_line_interface.lower() in ["click", "typer"] %}
 
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project.scripts]
 {{ cookiecutter.project_slug }}= "{{cookiecutter.project_slug}}.__main__:main"
 {%- endif %}
