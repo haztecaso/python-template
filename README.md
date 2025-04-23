@@ -28,11 +28,20 @@ After generation you should run the following commands in the newly created
 project folder:
 
 ```bash
-direnv allow         # if you use direnv
-nix develop          # to activate the development environment
-git init             # initialize the github repo
-git add .            # to stage the project files 
-pre-commit install   # to install pre-commit hook
+# if you use direnv 
+direnv allow
+
+# to activate the development environment
+nix develop
+
+# initialize the github repo
+git init
+
+# to stage the project files 
+git add .
+
+# install git hooks
+pre-commit install --hook-type commit-msg --hook-type pre-commit 
 ```
 
 ## Roadmap
