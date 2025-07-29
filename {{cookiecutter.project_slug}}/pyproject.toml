@@ -38,10 +38,28 @@ dev = [
 
 [tool.pytest.ini_options]
 asyncio_default_fixture_loop_scope = "session"
+addopts = "-ra --cov=src"
 {%- endif %}
+
+[tool.coverage.report]
+exclude_also = [
+    'def __repr__',
+    'raise NotImplementedError',
+    'if TYPE_CHECKING:',
+    'class .*\bProtocol\):',
+    '@(abc\.)?abstractmethod',
+]
+omit = [
+    "*/.local/*",
+    "/usr/*",
+    "/nix/store/*",
+    ]
 
 [tool.commitizen]
 version_provider = "uv"
 tag_format =  "v${version}"
 version_scheme = "semver"
 update_changelog_on_bump = true
+
+[tool.isort]
+profile = "black"
