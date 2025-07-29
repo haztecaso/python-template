@@ -1,4 +1,4 @@
-{%- if cookiecutter.command_line_interface.lower() == "click" %}
+{%- if cookiecutter.command_line_interface.lower() == "click" -%}
 import click
 
 
@@ -7,7 +7,8 @@ import click
 def main(name):
     """Cli interface for {{ cookiecutter.project_slug }}."""
     click.echo(f"Hello {name} from {{ cookiecutter.project_name }}")
-{%- elif cookiecutter.command_line_interface.lower() == "argparse" %}
+
+{%- elif cookiecutter.command_line_interface.lower() == "argparse" -%}
 import argparse
 
 
@@ -24,12 +25,13 @@ def main():
     print("Hello from {{ cookiecutter.project_name }}")
     # print(f"Echo: {args.echo}")
     # print(f"The square of {args.square} is {args.square ** 2}")
-{%- else %}
+
+{%- else -%}
 def main():
     """Main entrypoint for {{ cookiecutter.project_slug }}."""
     print("Hello from {{ cookiecutter.project_name }}")
+
 {%- endif %}
 
 if __name__ == "__main__":
     main()
-
