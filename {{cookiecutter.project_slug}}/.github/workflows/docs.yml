@@ -39,9 +39,6 @@ jobs:
       - name: Install the project with docs dependencies
         run: uv sync --all-extras --dev --group docs
 
-      - name: Generate API documentation
-        run: python docs/gen_api_docs.py
-
       - name: Build documentation
         run: uv run mkdocs build
 
