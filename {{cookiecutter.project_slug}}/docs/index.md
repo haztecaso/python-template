@@ -1,4 +1,3 @@
-{% if cookiecutter.use_mkdocs == 'y' %}
 # {{ cookiecutter.project_name }}
 
 {{ cookiecutter.project_short_description }}
@@ -24,4 +23,3 @@ from {{ cookiecutter.project_slug }} import example
 ## License
 
 {{ cookiecutter.open_source_license }}
-{% endif %}
