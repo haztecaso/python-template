@@ -1,15 +1,23 @@
 {
     "default": {},
+    "minimalist": {
+        "use_asyncio": "n",
+        "command_line_interface": "None",
+        "use_mkdocs": "n"
+    },
     "click": {
         "use_asyncio": "n",
-        "command_line_interface": "click"
+        "command_line_interface": "click",
+        "use_mkdocs": "n"
     },
     "argparse": {
         "use_asyncio": "n",
-        "command_line_interface": "argparse"
+        "command_line_interface": "argparse",
+        "use_mkdocs": "n"
     },
-    "minimalist": {
+    "mkdocs": {
         "use_asyncio": "n",
-        "command_line_interface": "None"
+        "command_line_interface": "None",
+        "use_mkdocs": "y"
     }
 }

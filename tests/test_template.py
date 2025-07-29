@@ -10,14 +10,17 @@ from pytest_cookies.plugin import Cookies, Result
 # Type alias
 type Context = dict[str, Any]
 
+
 def load_contexts() -> dict[str, Context]:
     with open(Path(__file__).parent / "contexts.json", "r") as f:
         import json
+
         data = json.load(f)
     assert isinstance(data, dict), "contexts.json must contain a dictionary"
     for key, value in data.items():
         assert isinstance(value, dict), f"Context '{key}' must be a dictionary"
     return data
+
 
 CONTEXTS = load_contexts()
 
@@ -52,6 +55,21 @@ def test_basic_generation(project: Result):
     assert project.project_path.is_dir()
 
 
+def run_command(
+    command: list[str] | str,
+    project_path: Path,
+) -> subprocess.CompletedProcess:
+    """Helper function to run a command in the project directory."""
+    if isinstance(command, str):
+        command = command.split()
+    return subprocess.run(
+        command,
+        cwd=project_path,
+        capture_output=True,
+        text=True,
+    )
+
+
 @pytest.mark.parametrize("project", ["click", "argparse", "minimalist"], indirect=True)
 def test_main_entrypoint(project: Result):
     """Test that the main entrypoint can be run successfully."""
@@ -59,20 +77,12 @@ def test_main_entrypoint(project: Result):
     assert project_path is not None
     project_name = os.path.basename(project_path)
 
-    # Run the module using Python's -m flag
-    process = subprocess.run(
-        ["uv", "run", project_name],
-        cwd=project_path,
-        capture_output=True,
-        text=True,
-    )
+    process = run_command(f"uv run {project_name}", project_path)
 
-    # Check that the command executed successfully
     assert (
         process.returncode == 0
     ), f"Main entrypoint failed with error: {process.stderr}"
 
-    # Verify expected output is present (all variants should print a welcome message)
     assert (
         f"Hello" in process.stdout
     ), f"Expected welcome message not found in output: {process.stdout}"
@@ -87,18 +97,52 @@ def test_pytest_runs(project: Result):
     test_dir = project_path / "tests"
     assert test_dir.is_dir(), f"Expected tests directory not found: {test_dir}"
 
-    # Run pytest in the generated project
-    process = subprocess.run(
-        ["uv", "run", "pytest", "-xvs"],
-        cwd=project_path,
-        capture_output=True,
-        text=True,
-    )
+    process = run_command("uv run pytest -xvs", project_path)
 
-    # Check that pytest ran successfully
     assert (
         process.returncode == 0
     ), f"pytest failed with error: {process.stderr}\nOutput: {process.stdout}"
     assert (
-        "1 passed" in process.stdout
-    ), f"Expected '1 passed' in pytest output, but got: {process.stdout}"
+        "passed" in process.stdout
+    ), f"Expected 'passed' in pytest output, but got: {process.stdout}"
+
+
+@pytest.mark.parametrize("project", ["mkdocs"], indirect=True)
+def test_mkdocs_runs(project: Result):
+    """Test that mkdocs can run successfully in the generated project."""
+    project_path = project.project_path
+    assert project_path is not None
+
+    docs_dir = project_path / "docs"
+    assert docs_dir.is_dir(), f"Expected docs directory not found: {docs_dir}"
+
+    # Sync docs dependencies
+    process = run_command("uv sync --group docs", project_path)
+    assert (
+        process.returncode == 0
+    ), f"uv sync failed with error: {process.stderr}\nOutput: {process.stdout}"
+
+    # Run mkdocs build in the generated project
+    process = run_command("uv run mkdocs build", project_path)
+
+    assert (
+        process.returncode == 0
+    ), f"pytest failed with error: {process.stderr}\nOutput: {process.stdout}"
+    assert (
+        "Documentation built in" in process.stderr
+    ), f"Expected 'Documentation built in' in mkdocs build stderr, but got: {process.stderr}"
+
+
+@pytest.mark.parametrize("project", ["minimalist"], indirect=True)
+def test_no_docs_files(project: Result):
+    # Test that no docs files are generated in the minimalist project
+    project_path = project.project_path
+
+    assert project_path is not None
+
+    assert not (
+        project_path / "docs"
+    ).exists(), f"Expected no docs directory in minimalist project"
+    assert not (
+        project_path / "mkdocs.yml"
+    ).exists(), "Expected no mkdocs.yml file in minimalist project"

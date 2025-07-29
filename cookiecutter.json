@@ -18,6 +18,7 @@
         "argparse",
         "None"
     ],
+    "use_mkdocs": "y",
     "open_source_license": [
         "MIT license",
         "BSD license",
