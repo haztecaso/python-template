@@ -1,0 +1,42 @@
+[project]
+name = "cookiecutter-haztecaso-python"
+version = "0.1.0"
+description = "My personal cookiecutter template for Python"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [ 
+    "cookiecutter" 
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "isort>=6.0.1",
+    "pytest",
+    "pytest-cookies",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/cookiecutter.json",
+    "/{{cookiecutter.project_slug}}",
+    "/hooks",
+    "/README.md",
+]
+
+[tool.hatch.build.targets.wheel]
+include = [
+    "/cookiecutter.json",
+    "/{{cookiecutter.project_slug}}",
+    "/hooks",
+]
+
+
+[tool.pytest.ini_options]
+testpaths = [ "tests" ]
+norecursedirs = [ "{{cookiecutter.project_slug}}" ]
+

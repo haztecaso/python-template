@@ -1,0 +1,15 @@
+{
+    "default": {},
+    "click": {
+        "use_asyncio": "n",
+        "command_line_interface": "click"
+    },
+    "argparse": {
+        "use_asyncio": "n",
+        "command_line_interface": "argparse"
+    },
+    "minimalist": {
+        "use_asyncio": "n",
+        "command_line_interface": "None"
+    }
+}
