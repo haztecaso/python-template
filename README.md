@@ -59,12 +59,10 @@ cookiecutter gh:haztecaso/python-template
 
 ### Initial setup
 
-After generation, run the following commands in your new project directory:
-
 ```bash
 # If you use direnv 
 direnv allow
 
-# Activate the development environment
+# manually activate the development environment
 nix develop
 ```
