@@ -69,6 +69,21 @@ def run_command(
         text=True,
     )
 
+@pytest.mark.parametrize("project", ["minimalist"], indirect=True)
+def test_version(project: Result):
+    project_path = project.project_path
+    assert project_path is not None
+    project_name = os.path.basename(project_path)
+    version_file = project_path / "src" / project_name / "version.py"
+
+    process = run_command(f"uv run python {version_file}", project_path)
+
+    assert process.returncode == 0, f"Version failed with error: {process.stderr}"
+
+    assert (
+        project_name in process.stdout
+    ), f"Expected welcome message not found in output: {process.stdout}"
+    
 
 @pytest.mark.parametrize("project", ["click", "argparse", "minimalist"], indirect=True)
 def test_main_entrypoint(project: Result):
