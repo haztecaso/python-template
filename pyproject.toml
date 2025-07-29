@@ -4,9 +4,7 @@ version = "0.1.0"
 description = "My personal cookiecutter template for Python"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [ 
-    "cookiecutter" 
-]
+dependencies = [ "cookiecutter" ]
 
 [build-system]
 requires = ["hatchling"]
@@ -16,7 +14,6 @@ build-backend = "hatchling.build"
 dev = [
     "black>=25.1.0",
     "isort>=6.0.1",
-    "pytest",
     "pytest-cookies",
 ]
 
