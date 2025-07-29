@@ -1,4 +1,3 @@
-{% if cookiecutter.use_mkdocs == 'y' %}
 name: docs
 
 on:
@@ -58,4 +57,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-{% endif %}

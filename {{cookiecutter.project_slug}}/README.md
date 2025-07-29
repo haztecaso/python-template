@@ -4,4 +4,4 @@
 
 {% if cookiecutter.use_mkdocs == 'y' %}
 [docs](https://{{cookiecutter.github_username}}.github.io/{{cookiecutter.project_slug}})
-{% endif %}
+{%- endif %}
