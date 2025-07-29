@@ -2,5 +2,5 @@
 
 set -e
 
-uv sync
+uv sync --dev
 nix build
