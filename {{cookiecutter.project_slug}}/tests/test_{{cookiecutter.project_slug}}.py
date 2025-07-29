@@ -1,7 +1,9 @@
 import pytest
-from {{ cookiecutter.project_slug }}.__main__ import main
+from {{cookiecutter.project_slug}}.__main__ import main
+
 {%- if cookiecutter.command_line_interface.lower() == "click" %}
 from click.testing import CliRunner
+
 
 def test_main():
     runner = CliRunner()

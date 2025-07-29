@@ -3,11 +3,8 @@
 import re
 import sys
 
-module_name = '{{ cookiecutter.project_slug }}'
+module_name = "{{ cookiecutter.project_slug }}"
 
-if not re.match(r'^[_a-zA-Z][_a-zA-Z0-9]+$', module_name):
+if not re.match(r"^[_a-zA-Z][_a-zA-Z0-9]+$", module_name):
     print(f"ERROR: The project slug '{module_name}' is not a valid python module name.")
     sys.exit(1)
-
-if '{{ cookiecutter.command_line_interface }}'.lower() == 'typer':
-    raise NotImplementedError("The Typer CLI template is not yet implemented.")

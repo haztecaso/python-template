@@ -14,9 +14,9 @@
     ],
     "use_asyncio": "y",
     "command_line_interface": [
-        "Click",
-        "Typer",
-        "No command-line interface"
+        "click",
+        "argparse",
+        "None"
     ],
     "open_source_license": [
         "MIT license",

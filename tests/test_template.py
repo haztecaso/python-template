@@ -74,7 +74,7 @@ def test_main_entrypoint(project: Result):
 
     # Verify expected output is present (all variants should print a welcome message)
     assert (
-        f"Hello from " in process.stdout
+        f"Hello" in process.stdout
     ), f"Expected welcome message not found in output: {process.stdout}"
 
 

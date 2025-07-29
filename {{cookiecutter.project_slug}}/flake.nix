@@ -108,7 +108,7 @@
                     fileset = lib.fileset.unions [
                       (old.src + "/pyproject.toml")
                       (old.src + "/README.md")
-                      (old.src + "/src/{{ cookiecutter.project_slug }}/__init__.py")
+                      (old.src + "/src/{{ cookiecutter.project_slug }}")
                     ];
                   };
 
