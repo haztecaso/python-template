@@ -6,26 +6,26 @@ different ways to do so.
 
 There are several ways you can contribute:
 
-- [Open an issue](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.project_slug }}/issues/new) if you encounter
+- [Open an issue](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/issues/new) if you encounter
     any bug or to let us know if you want a new feature to be implemented.
 - Spread the word about the program.
-- Review the [documentation](https://{{ cookiecutter.github_user }}.github.io/{{ cookiecutter.project_slug }}) and try to improve
+- Review the [documentation](https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}) and try to improve
     it.
 
 # I know how to program in Python
 
 If you have some python knowledge there are some additional ways to contribute.
-We've ordered the [issues](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.project_slug }}/issues) in
-[milestones](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.project_slug }}/milestones), check the issues in
+We've ordered the [issues](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/issues) in
+[milestones](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/milestones), check the issues in
 the smaller one, as it's where we'll be spending most of our efforts. Try the
 [good first
-issues](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.project_slug }}/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22),
+issues](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22),
 as they are expected to be easier to get into the project.
 
 We develop the program with
 [TDD](https://en.wikipedia.org/wiki/Test-driven_development), so we expect any
 contribution to have it's associated tests. We also try to maintain an updated
-[documentation](https://{{ cookiecutter.github_user }}.github.io/{{ cookiecutter.project_slug }}) of the project, so think if
+[documentation](https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}) of the project, so think if
 your contribution needs to update it.
 
 We know that the expected code quality is above average. Therefore it might
@@ -41,7 +41,7 @@ don't let this fact discourage you from contributing:
 
 Questions, feature requests and bug reports are all welcome as issues.
 **To report a security vulnerability, please see our [security
-policy](https://github.com/{{ cookiecutter.github_user }}/{{
+policy](https://github.com/{{ cookiecutter.github_username }}/{{
 cookiecutter.project_slug }}/security/policy) instead.**
 
 To make it as simple as possible for us to help you, please include the output
@@ -67,7 +67,7 @@ improvements release in a matter of days or weeks.
     issue to discuss the change before creating a pull request.
 
 If you're looking for something to get your teeth into, check out the ["help
-wanted"](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.project_slug }}/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
+wanted"](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
 label on github.
 
 # Development facilities
