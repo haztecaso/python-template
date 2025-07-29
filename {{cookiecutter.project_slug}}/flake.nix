@@ -45,6 +45,14 @@
           # Add necessary overrides
           # https://pyproject-nix.github.io/uv2nix/overriding/index.html
         });
+        csscompressor = prev.csscompressor.overrideAttrs (old: {
+          nativeBuildInputs = old.nativeBuildInputs
+            ++ [ (final.resolveBuildSystem { setuptools = [ ]; }) ];
+        });
+        jsmin = prev.csscompressor.overrideAttrs (old: {
+          nativeBuildInputs = old.nativeBuildInputs
+            ++ [ (final.resolveBuildSystem { setuptools = [ ]; }) ];
+        });
       };
 
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
