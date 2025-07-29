@@ -34,6 +34,14 @@ dev = [
 {%- endif %}
     "pytest-cov",
 ]
+{%- if cookiecutter.use_mkdocs == "y" %}
+docs = [
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings",
+    "mkdocstrings-python",
+]
+{%- endif %}
 {%- if cookiecutter.use_asyncio.lower() == "y" %}
 
 [tool.pytest.ini_options]

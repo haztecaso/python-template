@@ -1,0 +1,56 @@
+{% if cookiecutter.use_mkdocs == 'y' %}
+site_name: {{ cookiecutter.project_name }}
+site_description: {{ cookiecutter.project_short_description }}
+site_author: {{ cookiecutter.full_name }}
+
+repo_url: https://github.com/{{ cookiecutter.__gh_slug }}
+repo_name: {{ cookiecutter.__gh_slug }}
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.indexes
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_submodules: true
+            docstring_style: google
+
+nav:
+  - Home: index.md
+  - API Reference: api/
+  - Contributing: contributing.md
+{% endif %}

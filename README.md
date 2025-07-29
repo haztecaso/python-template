@@ -27,10 +27,9 @@ A modern cookiecutter template for Python projects using `uv` as the package man
 - 🪝 **Git Hooks**: Automated quality checks with pre-commit
 - 🤖 **CI Pipeline**: GitHub Actions workflow for automated testing
 - 🧰 **CLI Support**: Optional command-line interface scaffolding with click or argparse
+- 📚 **Documentation**: Optional MkDocs setup with automatic API documentation generation and GitHub Pages deployment
 
 ### ⏳ Planned Features
-
-- 📚 **Documentation**: MkDocs setup with automatic API documentation generation
 - 🛠️ **Application Patterns**:
   - Configuration management with Pydantic settings
   - Secrets management best practices
