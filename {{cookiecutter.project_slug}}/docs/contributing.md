@@ -48,10 +48,8 @@ To make it as simple as possible for us to help you, please include the output
 of the following call in your issue:
 
 ```bash
-python -c "import {{ cookiecutter.project_slug.replace('-', '_') }}.version; print({{ cookiecutter.project_slug.replace('-', '_') }}.version.version_info())"
+uv run src/{{ cookiecutter.project_slug }}/version.py
 ```
-
-or if you have `make` installed, you can use `make version`.
 
 Please try to always include the above unless you're unable to install `{{
 cookiecutter.project_slug }}` or know it's not relevant to your question or
@@ -75,11 +73,8 @@ label on github.
 To make contributing as easy and fast as possible, you'll want to run tests and
 linting locally.
 
-!!! note ""
-    **tl;dr**: use `make format` to fix formatting, `make` to run tests and linting & `make docs`
-    to build the docs.
-
-You'll need to have python 3.6, 3.7, or 3.8, virtualenv, git, and make installed.
+You'll need to have python 3.10, 3.11, 3.12, or 3.13, uv and git installed. The
+nix package manager is also recommended.
 
 * Clone your fork and go into the repository directory:
 
@@ -91,23 +86,8 @@ You'll need to have python 3.6, 3.7, or 3.8, virtualenv, git, and make installed
 * Set up the virtualenv for running tests:
 
     ```bash
-    virtualenv -p `which python3.7` env
+    uv sync
     source env/bin/activate
-    ```
-
-* Install `pdm` our package manager with the next command or using any of the
-    other [recommended
-    methods](https://pdm.fming.dev/latest/#recommended-installation-method).
-
-    ```bash
-    curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
-    ```
-
-* Install {{ cookiecutter.project_slug }}, dependencies and configure the
-    pre-commits:
-
-    ```bash
-    make install
     ```
 
 * Checkout a new branch and make your changes:
@@ -121,13 +101,13 @@ You'll need to have python 3.6, 3.7, or 3.8, virtualenv, git, and make installed
     [isort](https://github.com/timothycrosley/isort) to fix imports.
 
     ```bash
-    make format
+    uv run black
     ```
 
 * Run tests and linting:
 
     ```bash
-    make
+    uv run pre-commit
     ```
 
     There are more sub-commands in Makefile like `test-code`, `test-examples`,
@@ -142,7 +122,7 @@ You'll need to have python 3.6, 3.7, or 3.8, virtualenv, git, and make installed
     `localhost:8000`:
 
     ```bash
-    make docs
+    mkdocs serve
     ```
 
 * Commit, push, and create your pull request.

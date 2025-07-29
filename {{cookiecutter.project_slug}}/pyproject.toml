@@ -36,8 +36,14 @@ dev = [
 ]
 {%- if cookiecutter.use_mkdocs == "y" %}
 docs = [
+    "markdown-include",
     "mkdocs",
+    "mkdocs-autolinks-plugin",
+    "mkdocs-git-revision-date-localized-plugin",
+    "mkdocs-htmlproofer-plugin",
     "mkdocs-material",
+    "mkdocs-minify-plugin",
+    "mkdocs-section-index",
     "mkdocstrings",
     "mkdocstrings-python",
 ]
