@@ -139,7 +139,6 @@ dependencies = [
 dev = [
     { name = "black" },
     { name = "isort" },
-    { name = "pytest" },
     { name = "pytest-cookies" },
 ]
 
@@ -150,7 +149,6 @@ requires-dist = [{ name = "cookiecutter" }]
 dev = [
     { name = "black", specifier = ">=25.1.0" },
     { name = "isort", specifier = ">=6.0.1" },
-    { name = "pytest" },
     { name = "pytest-cookies" },
 ]
 
