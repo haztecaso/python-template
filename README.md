@@ -1,53 +1,70 @@
-# Python project template with uv, nix flakes and cookiecutter
+# Python Project Template
 
-A modern cookiecutter template for python projects using uv as the package manager, nix flakes for reproducibility, and a clean development setup. 
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3.10_|_3.11_|_3.12_|_3.13-blue?logo=python&logoColor=white)
+![Nix Flakes](https://img.shields.io/badge/Nix-Flakes-blue?logo=nixos&logoColor=white)
+![uv](https://img.shields.io/badge/Package_Manager-uv-blue)
+[![Tests](https://img.shields.io/badge/CI-Tests-green?logo=github&logoColor=white)](https://github.com/haztecaso/python-template/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+</div>
+
+A modern cookiecutter template for Python projects using `uv` as the package manager, Nix flakes for reproducibility, and a clean development setup.
 
 ## Features
 
-- 📦 Package management with uv
-- ❄️ Reproducible builds via Nix flakes
-- 🧪 Testing with pytest
-- 🧹 Code formatting and linting with *black*, *isort*, *flake8* and *pyright*.
-- 🪝 Git hooks with pre-commit
-- 🤖 CI with GitHub Actions to run your tests on push
-- 🧰 Optional CLI scaffolding with click
+### Current Features
 
-## Usage
+- 📦 **Package Management**: Modern dependency management with `uv`
+- ❄️ **Reproducible Builds**: Environment consistency via nix flakes
+- 🧪 **Testing**: Comprehensive testing setup with pytest
+- 🧹 **Code Quality**: Automatic formatting and linting with:
+  - Black for consistent code style
+  - isort for organized imports
+  - flake8 for code quality checks
+  - pyright for static type checking
+- 🪝 **Git Hooks**: Automated quality checks with pre-commit
+- 🤖 **CI Pipeline**: GitHub Actions workflow for automated testing
+- 🧰 **CLI Support**: Optional command-line interface scaffolding with click or argparse
 
-This template is intended to be used in machines with the *nix* package manager
-installed. You can install *cookiecutter* in your preferred way or create
-temporal shell with it using `nix-shell -p cookiecutter`.
+### ⏳ Planned Features
 
-To use the template:
+- 📚 **Documentation**: MkDocs setup with automatic API documentation generation
+- 🛠️ **Application Patterns**:
+  - Configuration management with Pydantic settings
+  - Secrets management best practices
+  - Observability stack (structured logging, OpenTelemetry)
+- 🧩 **Framework Integrations**:
+  - FastAPI for web APIs
+  - SQLModel + Alembic for database access and migrations
+  - Celery for background tasks
+- 🐳 **Containerization**: Dockerfile and docker-compose setup
+- 🔄 **Enhanced CI**: GitHub Action test matrix for multi-environment testing
+- 🐍 **PyPy**: Registry setup and GitHub Action for multi-interpreter testing
+
+## 🚀 Usage
+
+This template requires the [Nix package manager](https://nixos.org/). You can install `cookiecutter` in your preferred way or create a temporal shell with it:
+
+```bash
+nix-shell -p cookiecutter
+```
+
+### Creating a new project
 
 ```bash
 cookiecutter gh:haztecaso/python-template
 ```
 
-After generation you should run the following commands in the newly created
-project folder:
+### Initial setup
+
+After generation, run the following commands in your new project directory:
 
 ```bash
-# if you use direnv 
+# If you use direnv 
 direnv allow
 
-# to activate the development environment
+# Activate the development environment
 nix develop
-
-# initialize the github repo
-git init
-
-# to stage the project files 
-git add .
-
-# install git hooks
-pre-commit install --hook-type commit-msg --hook-type pre-commit 
 ```
-
-## Roadmap
-
-Planned features:
-
-- 🐍 PyPy registry setup and GitHub Action for multi-interpreter testing
-- 💬 typer CLI support
-- 🧩 Common python application layouts.
