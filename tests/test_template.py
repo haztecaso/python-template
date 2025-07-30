@@ -121,6 +121,12 @@ def test_pytest_runs(project: Result):
     test_dir = project_path / "tests"
     assert test_dir.is_dir(), f"Expected tests directory not found: {test_dir}"
 
+    # Sync test dependencies
+    process = run_command("uv sync --group test", project_path)
+    assert (
+        process.returncode == 0
+    ), f"uv sync failed with error: {process.stderr}\nOutput: {process.stdout}"
+
     process = run_command("uv run pytest -xvs", project_path)
 
     assert (
@@ -151,7 +157,7 @@ def test_mkdocs_runs(project: Result):
 
     assert (
         process.returncode == 0
-    ), f"pytest failed with error: {process.stderr}\nOutput: {process.stdout}"
+    ), f"mkdocs failed with error: {process.stderr}\nOutput: {process.stdout}"
     assert (
         "Documentation built in" in process.stderr
     ), f"Expected 'Documentation built in' in mkdocs build stderr, but got: {process.stderr}"
