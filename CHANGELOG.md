@@ -1,3 +1,9 @@
+## v0.3.1 (2025-07-31)
+
+### Fix
+
+- **readme**: html and markdown mix
+
 ## v0.3.0 (2025-07-31)
 
 ### Feat
