@@ -1,11 +1,13 @@
 # {{ cookiecutter.project_name }}
 
 <div align="center">
-*{{ cookiecutter.project_short_description }}*
+<em>{{ cookiecutter.project_short_description }}</em>
 </div>
 
 <div align="center">
-![Test](https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}/actions/workflows/test.yml/badge.svg)
+<a href="https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}/actions/workflows/test.yml" target="_blank">
+    <img src="https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}/actions/workflows/test.yml/badge.svg" alt="test badge">
+</a>
 </div>
 
 ---
