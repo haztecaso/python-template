@@ -28,6 +28,8 @@ dev = [
     "isort",
     "pre-commit",
     "pyright",
+]
+test = [
     "pytest",
 {%- if cookiecutter.use_asyncio.lower() == "y" %}
     "pytest-asyncio",
@@ -41,6 +43,7 @@ docs = [
     "mkdocs-autolinks-plugin",
     "mkdocs-git-revision-date-localized-plugin",
     "mkdocs-htmlproofer-plugin",
+    "mkdocs-include-markdown-plugin",
     "mkdocs-material",
     "mkdocs-minify-plugin",
     "mkdocs-section-index",

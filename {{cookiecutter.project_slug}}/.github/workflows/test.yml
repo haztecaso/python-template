@@ -1,4 +1,4 @@
-name: test
+name: Test
 
 on:
   push:
@@ -10,8 +10,8 @@ permissions:
   contents: read
 
 jobs:
-  uv-example:
-    name: python
+  pytest:
+    name: Run tests
     runs-on: ubuntu-latest
 
     steps:

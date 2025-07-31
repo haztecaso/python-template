@@ -1,11 +1,8 @@
-name: docs
+name: Docs
 
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  # Allow manual trigger
   workflow_dispatch:
 
 permissions:
@@ -13,13 +10,13 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
   build:
+    name: Mkdocs build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -47,6 +44,7 @@ jobs:
           path: ./site
 
   deploy:
+    name: Deploy to github pages
     environment:
       name: github-pages
       url: {% raw -%}${{ github.event.repository.html_url }}/{%- endraw %}
