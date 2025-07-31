@@ -15,7 +15,6 @@ dependencies = [
     "asyncio",
 {%- endif %}
 ]
-license = "{{ cookiecutter.open_source_license }}"
 classifiers=[
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
