@@ -12,6 +12,7 @@ dependencies = [
     "asyncio",
 {%- endif %}
 ]
+license = "{{ cookiecutter.open_source_license }}"
 
 [build-system]
 requires = ["hatchling"]
