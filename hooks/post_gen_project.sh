@@ -15,4 +15,3 @@ uv run isort src tests
 nix build
 git init --initial-branch=main && git add .
 uv run pre-commit install --hook-type commit-msg --hook-type pre-commit
-clear
