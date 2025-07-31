@@ -1,10 +1,10 @@
 {
-    "full_name": "Adrián Lattes",
-    "email": "adrianlattes@disroot.org",
-    "github_username": "haztecaso",
-    "project_name": "My cool python project",
+    "project_name": null,
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-    "project_short_description": "Short description",
+    "project_short_description": null,
+    "author": null,
+    "author_email": null,
+    "github_username": null,
     "use_asyncio": "y",
     "command_line_interface": [
         "click",
@@ -18,6 +18,6 @@
         "MIT license",
         "BSD license"
     ],
-    "security_advisories_email": "{{ cookiecutter.email }}",
+    "security_advisories_email": "{{ cookiecutter.author_email }}",
     "__gh_slug": "{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"
 }
