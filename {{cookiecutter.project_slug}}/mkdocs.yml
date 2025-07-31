@@ -1,6 +1,6 @@
 site_name: {{ cookiecutter.project_name }}
 site_description: {{ cookiecutter.project_short_description }}
-site_author: {{ cookiecutter.full_name }}
+site_author: {{ cookiecutter.author }}
 
 repo_url: https://github.com/{{ cookiecutter.__gh_slug }}
 repo_name: {{ cookiecutter.__gh_slug }}

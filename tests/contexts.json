@@ -1,21 +1,47 @@
 {
-    "default": {},
+    "default": {
+        "author": "Test Author",
+        "author_email": "test@email.com",
+        "project_name": "My Cool Python Project",
+        "project_short_description": "A short description",
+        "github_username": "testuser"
+    },
     "minimalist": {
+        "author": "Test Author",
+        "author_email": "test@email.com",
+        "project_name": "My Cool Python Project",
+        "project_short_description": "A short description",
+        "github_username": "testuser",
         "use_asyncio": "n",
         "command_line_interface": "None",
         "use_mkdocs": "n"
     },
     "click": {
+        "author": "Test Author",
+        "author_email": "test@email.com",
+        "project_name": "My Cool Python Project",
+        "project_short_description": "A short description",
+        "github_username": "testuser",
         "use_asyncio": "n",
         "command_line_interface": "click",
         "use_mkdocs": "n"
     },
     "argparse": {
+        "author": "Test Author",
+        "author_email": "test@email.com",
+        "project_name": "My Cool Python Project",
+        "project_short_description": "A short description",
+        "github_username": "testuser",
         "use_asyncio": "n",
         "command_line_interface": "argparse",
         "use_mkdocs": "n"
     },
     "mkdocs": {
+        "author": "Test Author",
+        "author_email": "test@email.com",
+        "project_name": "My Cool Python Project",
+        "project_short_description": "A short description",
+        "github_username": "testuser",
         "use_asyncio": "n",
         "command_line_interface": "None",
         "use_mkdocs": "y"

@@ -1,10 +1,10 @@
 {
-    "full_name": "Adrián Lattes",
-    "email": "adrianlattes@disroot.org",
-    "github_username": "haztecaso",
-    "project_name": "My cool python project",
+    "project_name": null,
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-    "project_short_description": "Short description",
+    "project_short_description": null,
+    "author": null,
+    "author_email": null,
+    "github_username": null,
     "use_asyncio": "y",
     "command_line_interface": [
         "click",
@@ -13,13 +13,11 @@
     ],
     "use_mkdocs": "y",
     "open_source_license": [
-        "MIT license",
-        "BSD license",
-        "ISC license",
-        "Apache Software License 2.0",
-        "GNU General Public License v3",
-        "Not open source"
+        "GNU General Public License v3 (GPLv3)",
+        "Apache Software License",
+        "MIT License",
+        "BSD License"
     ],
-    "security_advisories_email": "{{ cookiecutter.email }}",
+    "security_advisories_email": "{{ cookiecutter.author_email }}",
     "__gh_slug": "{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"
 }
