@@ -57,7 +57,7 @@
 
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-      python = pkgs.python{{ cookiecutter.python_version.replace(".", "") }};
+      python = pkgs.python3;
 
       pythonSet = (pkgs.callPackage pyproject-nix.build.packages {
         inherit python;

@@ -19,13 +19,13 @@ If you want to keep your project in sync with this template, you can use
 *cruft*.
 
 ```bash
-cruft create gh:haztecaso/python-template
+cruft create https://github.com/haztecaso/python-template
 ```
 
 Otherwise you can stick with *cookiecutter*.
 
 ```bash
-cookiecutter gh:haztecaso/python-template
+cookiecutter https://github.com/haztecaso/python-template
 ```
 
 ## Features

@@ -13,6 +13,10 @@ jobs:
   pytest:
     name: Run tests
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.11', '3.12', '3.13']
 
     steps:
       - uses: actions/checkout@v4
@@ -23,10 +27,10 @@ jobs:
           enable-cache: true
           cache-dependency-glob: "uv.lock"
 
-      - name: "Set up Python"
+      - name: "Set up Python {% raw -%}${{ matrix.python-version }}{%- endraw %}"
         uses: actions/setup-python@v5
         with:
-          python-version-file: "pyproject.toml"
+          python-version: {% raw -%}${{ matrix.python-version }}{%- endraw %}
 
       - name: Install the project
         run: uv sync --all-extras --dev
