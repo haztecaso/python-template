@@ -16,6 +16,17 @@ dependencies = [
 {%- endif %}
 ]
 license = "{{ cookiecutter.open_source_license }}"
+classifiers=[
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: {{ cookiecutter.open_source_license }}",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Natural Language :: English",
+]
 
 [build-system]
 requires = ["hatchling"]
