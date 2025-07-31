@@ -1,6 +1,6 @@
 [project]
 name = "cookiecutter-haztecaso-python"
-version = "0.1.0"
+version = "0.2.0"
 description = "My personal cookiecutter template for Python"
 readme = "README.md"
 requires-python = ">=3.13"
@@ -13,7 +13,9 @@ build-backend = "hatchling.build"
 [dependency-groups]
 dev = [
     "black>=25.1.0",
+    "commitizen>=3.13.0",
     "isort>=6.0.1",
+    "pre-commit>=3.6.0",
     "pytest-cookies",
 ]
 
@@ -37,3 +39,16 @@ include = [
 testpaths = [ "tests" ]
 norecursedirs = [ "{{cookiecutter.project_slug}}" ]
 
+[tool.commitizen]
+version_provider = "uv"
+tag_format = "v${version}"
+version_scheme = "semver"
+update_changelog_on_bump = true
+
+[tool.black]
+line-length = 88
+target-version = ['py310', 'py311', 'py312', 'py313']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
