@@ -16,7 +16,7 @@ A modern cookiecutter template for Python projects using `uv` as the package man
 ### Creating a new project
 
 If you want to keep your project in sync with this template, you can use
-*cruft*. 
+*cruft*.
 
 ```bash
 cruft create gh:haztecaso/python-template
@@ -41,6 +41,7 @@ cookiecutter gh:haztecaso/python-template
   - flake8 for code quality checks
   - pyright for static type checking
 - 🪝 **Git Hooks**: Automated quality checks with pre-commit
+- 📝 **Conventional Commits**: Standardized commit messages with commitizen
 - 🤖 **CI Pipeline**: GitHub Actions workflow for automated testing
 - 🧰 **CLI Support**: Optional command-line interface scaffolding with click or argparse
 - 📚 **Documentation**: Optional MkDocs setup with automatic API documentation generation and GitHub Pages deployment
@@ -57,4 +58,3 @@ cookiecutter gh:haztecaso/python-template
 - 🐳 **Containerization**: Dockerfile and docker-compose setup
 - 🔄 **Enhanced CI**: GitHub Action test matrix for multi-environment testing
 - 🐍 **PyPy**: Registry setup and GitHub Action for multi-interpreter testing
-
