@@ -34,9 +34,6 @@ markdown_extensions:
   - abbr
   - def_list
   - admonition
-  # We need the markdown-include to inject files into other files
-  - markdown_include.include:
-      base_path: docs
   - meta
   - toc:
       permalink: true
@@ -65,7 +62,15 @@ markdown_extensions:
   - pymdownx.tilde
 
 plugins:
-  - search
+  - autolinks
+  - include-markdown:
+      opening_tag: "{!"
+      closing_tag: "!}"
+  - git-revision-date-localized:
+      type: timeago
+      fallback_to_build_date: true
+  - minify:
+      minify_html: true
   - mkdocstrings:
       handlers:
         python:
@@ -73,12 +78,7 @@ plugins:
             show_source: true
             show_submodules: true
             docstring_style: google
-  - autolinks
-  - git-revision-date-localized:
-      type: timeago
-      fallback_to_build_date: true
-  - minify:
-      minify_html: true
+  - search
   - section-index
 
 nav:

@@ -43,6 +43,7 @@ docs = [
     "mkdocs-autolinks-plugin",
     "mkdocs-git-revision-date-localized-plugin",
     "mkdocs-htmlproofer-plugin",
+    "mkdocs-include-markdown-plugin",
     "mkdocs-material",
     "mkdocs-minify-plugin",
     "mkdocs-section-index",

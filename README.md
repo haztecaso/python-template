@@ -6,11 +6,27 @@
 ![Nix Flakes](https://img.shields.io/badge/Nix-Flakes-blue?logo=nixos&logoColor=white)
 ![uv](https://img.shields.io/badge/Package_Manager-uv-blue)
 [![Tests](https://img.shields.io/badge/CI-Tests-green?logo=github&logoColor=white)](https://github.com/haztecaso/python-template/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>
 
 A modern cookiecutter template for Python projects using `uv` as the package manager, Nix flakes for reproducibility, and a clean development setup.
+
+## 🚀 Usage
+
+### Creating a new project
+
+If you want to keep your project in sync with this template, you can use
+*cruft*. 
+
+```bash
+cruft create gh:haztecaso/python-template
+```
+
+Otherwise you can stick with *cookiecutter*.
+
+```bash
+cookiecutter gh:haztecaso/python-template
+```
 
 ## Features
 
@@ -42,26 +58,3 @@ A modern cookiecutter template for Python projects using `uv` as the package man
 - 🔄 **Enhanced CI**: GitHub Action test matrix for multi-environment testing
 - 🐍 **PyPy**: Registry setup and GitHub Action for multi-interpreter testing
 
-## 🚀 Usage
-
-This template requires the [Nix package manager](https://nixos.org/). You can install `cookiecutter` in your preferred way or create a temporal shell with it:
-
-```bash
-nix-shell -p cookiecutter
-```
-
-### Creating a new project
-
-```bash
-cookiecutter gh:haztecaso/python-template
-```
-
-### Initial setup
-
-```bash
-# If you use direnv 
-direnv allow
-
-# manually activate the development environment
-nix develop
-```
