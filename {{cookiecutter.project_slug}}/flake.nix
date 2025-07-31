@@ -1,4 +1,5 @@
 {
+  description = "{{ cookiecutter.project_short_description }}";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
