@@ -78,6 +78,10 @@ version_provider = "uv"
 tag_format =  "v${version}"
 version_scheme = "semver"
 update_changelog_on_bump = true
+version_files = [
+  "pyproject.toml:version",
+  "src/{{ cookiecutter.project_slug }}/version.py",
+]
 
 [tool.black]
 line-length = 88

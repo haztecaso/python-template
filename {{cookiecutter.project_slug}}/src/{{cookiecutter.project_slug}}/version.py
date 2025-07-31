@@ -1,7 +1,6 @@
 """Utilities to retrieve the information of the program version."""
 
-# Do not edit the version manually, let `make bump` do it.
-
+# Do not edit the version manually, let `cz bump` do it.
 __version__ = "0.1.0"
 
 
