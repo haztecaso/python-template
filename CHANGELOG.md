@@ -1,3 +1,9 @@
+## v0.3.2 (2025-11-02)
+
+### Fix
+
+- **template**: test github workflow
+
 ## v0.3.1 (2025-07-31)
 
 ### Fix
